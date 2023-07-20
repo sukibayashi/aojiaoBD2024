@@ -33,3 +33,20 @@
 .avatar {
   width: 60px;
 }
+
+
+// 攝像頭
+#arCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+#btnOpenCamera {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1;
+}
