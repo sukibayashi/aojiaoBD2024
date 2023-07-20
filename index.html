@@ -14,6 +14,9 @@
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+  <!-- Boostrap -->
+  <!-- https://getbootstrap.com/docs/5.3/getting-started/introduction/ -->
+
   <!-- 復習用 ↓ -->
   <!-- https://github.com/sukibayashi/onlinecasinowalkerrankingpage/blob/master/index.html -->
 
@@ -22,11 +25,11 @@
 </head>
 
 <body>
-
+  <!-- 頂部 -->
   <nav class="navbar bg-body-tertiary fixed-top">
     <!-- Title -->
     <div class="container-fluid mt-1 mb-1">
-      <span class="navbar-brand mb-1 h1 fs-2"><b>トーク</b></span>
+      <span class="navbar-brand mb-1 h1 fs-2 fw-bold">トーク</span>
     </div>
 
     <!-- Search -->
@@ -42,39 +45,109 @@
     <!-- Banner -->
     <div class="container-fluid d-flex justify-content-center p-1">
       <a href="https://www.bilibili.com/read/readlist/rl697982?spm_id_from=333.999.0.0" class="">
-        <img src="./src/yamata_banner.png" class="img-fluid" alt="...">
+        <img src="./src/yamata_banner.png" class="banner_max" alt="山田くんとLv999の恋をする">
       </a>
     </div>
+
+    <ul class="nav nav-tabs container-fluid mt-1" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link fw-bold active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+          type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">全て</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link fw-bold" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+          type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">友だち</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link fw-bold" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
+          type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">グループ</button>
+      </li>
+    </ul>
   </nav>
+  <!-- 頂部 -->
+
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <img src="./src/yamada.png" class="avatar" alt="Avatar">
+          <div class="avatar_content">
+            <div class="avatar_name fw-bold">山田くん(9/21)</div>
+            <div class="avatar_name"><small>山田くんが写真を送信しました</small></div>
+          </div>
+          
+          <div class="d-flex flex-column align-items-end">
+            <small>午前 0:00</small>
+            <span class="badge text-bg-lime mt-2" style="width: 30px;">14</span>
+          </div>
+
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          A second list item
+          <span class="badge text-bg-lime">2</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          A third list item
+          <span class="badge text-bg-lime">1</span>
+        </li>
+      </ul>
+    </div>
+    <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <img src="./src/yamada.png" class="avatar" alt="Avatar">
+          <div class="avatar_content">
+            <div class="avatar_name fw-bold">山田くん(9/21)</div>
+            <div class="avatar_name"><small>山田くんが写真を送信しました</small></div>
+          </div>
+          
+          <div class="d-flex flex-column align-items-end">
+            <small>午前 0:00</small>
+            <span class="badge text-bg-lime mt-2" style="width: 30px;">14</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">...
+    </div>
+    <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">...
+    </div>
+  </div>
+
+
 
 
   <!-- 底部 -->
   <nav class="navbar bg-body-tertiary shadow-box fixed-bottom d-flex justify-content-around p-2 pb-3">
-
     <div class="d-flex flex-column align-items-center mt-2 mb-2">
       <i class="fa-solid fa-house"></i>
-      <p class="m-0">ホーム</p>
+      <p class="m-0"><small>ホーム</small></p>
     </div>
 
     <div class="d-flex flex-column align-items-center mt-2 mb-2">
       <i class="fa-regular fa-message"></i>
-      <p class="m-0">トーク</p>
+      <p class="m-0"><small>トーク</small></p>
     </div>
 
     <div class="d-flex flex-column align-items-center mt-2 mb-2">
       <i class="fa-regular fa-newspaper"></i>
-      <p class="m-0">新聞</p>
+      <p class="m-0"><small>新聞</small></p>
     </div>
 
     <div class="d-flex flex-column align-items-center mt-2 mb-2">
       <i class="fa-regular fa-credit-card"></i>
-      <p class="m-0">ウォレット</p>
+      <p class="m-0"><small>ウォレット</small></p>
     </div>
   </nav>
+  <!-- 底部 -->
+
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
     crossorigin="anonymous"></script>
+
+
 </body>
 
 </html>
