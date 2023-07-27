@@ -1,12 +1,19 @@
+body {
+  background-image: url("/src/line_bg.jpg");
+  background-size: 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-color: rgb(175, 221, 219) !important;
+
+}
+
 .banner_max {
   max-height: 75px;
 }
 
 .tab-pane {
   position: relative;
-  top: 230px;
-  // position: absolute;
-  // top:30%;
+  top: 235px;
 }
 
 .shadow-box {
@@ -32,6 +39,7 @@
 
 .avatar {
   width: 60px;
+  margin-right: 10px;
 }
 
 
@@ -44,9 +52,94 @@
   height: 100%;
   pointer-events: none;
 }
+
 #btnOpenCamera {
   position: absolute;
   top: 20px;
   left: 20px;
   z-index: 1;
+}
+
+// chat_container
+#chat-container {
+  width: 100vw;
+  height: 100vh;
+  // margin-bottom: 60px;
+}
+
+.message {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 7px;
+
+  .avatar_c {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .chat_box {
+    display: flex;
+    align-items: end;
+
+    // 訊息主體
+    .message-body {
+      width: 55%;
+      padding: 0.5rem;
+      background-color: white;
+      border: 0.2px solid rgba(0, 0, 0, 0.17);
+      border-radius: 0.375rem;
+      margin-right: 10px;
+    }
+
+    .message_yamada{
+      width: 78px;
+      color: gray;
+      font-size: 4px;
+    }
+
+    // 時間以及已讀
+    .message_right {
+      width: 78px;
+      color: gray;
+      font-size: 4px;
+      margin-right: 10px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+
+    }
+  }
+
+
+
+
+}
+
+.own-message {
+  justify-content: end;
+}
+
+.chat-input{
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+// 底部發送
+#message-input{
+  background-color: rgb(245, 245, 245);
+  border: 5px solid rgb(242, 242, 242);
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 1rem;;
+  margin-right: 12px;
+}
+
+.papper_plane{
+  width: 25px;
+  height: 25px;
 }

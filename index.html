@@ -66,10 +66,13 @@
   </nav>
   <!-- 頂部 -->
 
+  <!-- Main -->
   <div class="tab-content" id="myTabContent">
+    <!-- 全て -->
     <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
       <ul class="list-group">
-        <li class="list-group-item d-flex justify-content-between align-items-center">
+        <!-- <li class="list-group-item d-flex justify-content-between align-items-center">
+
           <img src="./src/yamada.png" class="avatar" alt="Avatar">
           <div class="avatar_content">
             <div class="avatar_name fw-bold">山田くん(9/21)</div>
@@ -80,7 +83,21 @@
             <small>午前 0:00</small>
             <span class="badge text-bg-lime mt-2" style="width: 30px;">14</span>
           </div>
-
+        </li> -->
+        <li>
+          <a href="./chat.html" class="list-group-item d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+              <img src="./src/yamada.png" class="avatar" alt="Avatar">
+              <div class="avatar_content">
+                <div class="avatar_name fw-bold">山田くん(9/21)</div>
+                <div class="avatar_name"><small>山田くんが写真を送信しました</small></div>
+              </div>
+            </div>
+            <div class="d-flex flex-column align-items-end">
+              <small>午前 0:00</small>
+              <span class="badge text-bg-lime mt-2" style="width: 30px;">14</span>
+            </div>
+          </a>
         </li>
         <li class="list-group-item d-flex justify-content-between align-items-center">
           A second list item
@@ -90,38 +107,49 @@
           A third list item
           <span class="badge text-bg-lime">1</span>
         </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-          <div>
-            <button id="btnOpenCamera">打开摄像头</button>
-            <canvas id="arCanvas"></canvas>
-          </div>x
-        </li>
-
       </ul>
     </div>
+    <!-- 友だち -->
     <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
       <ul class="list-group">
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-          <img src="./src/yamada.png" class="avatar" alt="Avatar">
-          <div class="avatar_content">
-            <div class="avatar_name fw-bold">山田くん(9/21)</div>
-            <div class="avatar_name"><small>山田くんが写真を送信しました</small></div>
-          </div>
-
-          <div class="d-flex flex-column align-items-end">
-            <small>午前 0:00</small>
-            <span class="badge text-bg-lime mt-2" style="width: 30px;">14</span>
-          </div>
+        <li>
+          <a href="./chat.html" class="list-group-item d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+              <img src="./src/yamada.png" class="avatar" alt="Avatar">
+              <div class="avatar_content">
+                <div class="avatar_name fw-bold">山田くん(9/21)</div>
+                <div class="avatar_name"><small>山田くんが写真を送信しました</small></div>
+              </div>
+            </div>
+            <div class="d-flex flex-column align-items-end">
+              <small>午前 0:00</small>
+              <span class="badge text-bg-lime mt-2" style="width: 30px;">14</span>
+            </div>
+          </a>
         </li>
       </ul>
     </div>
-    <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">...
-    </div>
-    <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">...
+    <!-- グループ -->
+    <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+      <ul class="list-group">
+        <li>
+          <a href="" class="list-group-item d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+              <img src="./src/ttl_twmashiro.png" class="avatar" alt="Avatar">
+              <div class="avatar_content">
+                <div class="avatar_name fw-bold">Chocolate Rabbit</div>
+                <div class="avatar_name"><small>瑠璃姫がスタンプを送信しました</small></div>
+              </div>
+            </div>
+            <div class="d-flex flex-column align-items-end">
+              <small>午前 0:00</small>
+              <span class="badge text-bg-lime mt-2" style="width: 30px;">14</span>
+            </div>
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
-
-
 
 
   <!-- 底部 -->
@@ -153,64 +181,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
     crossorigin="anonymous"></script>
-
-    <script>
-      const btnOpenCamera = document.getElementById('btnOpenCamera');
-      const arCanvas = document.getElementById('arCanvas');
-      let stream;
-  
-      // 点击按钮打开摄像头
-      btnOpenCamera.addEventListener('click', async () => {
-        try {
-          stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
-          btnOpenCamera.disabled = true;
-  
-          // 获取视频轨道
-          const videoTrack = stream.getVideoTracks()[0];
-  
-          // 创建 AR 环境
-          const xrSession = await navigator.xr.requestSession('immersive-ar', {
-            requiredFeatures: ['hit-test'],
-            optionalFeatures: ['dom-overlay'],
-            domOverlay: { root: arCanvas }
-          });
-  
-          // 将摄像头的视频流加入到 AR 环境中
-          xrSession.updateRenderState({ baseLayer: new XRWebGLLayer(xrSession, createWebGLContext()) });
-          const xrVideo = new XRVideoFrame(videoTrack);
-          xrSession.updateSourceVideo(xrVideo);
-  
-          // 显示一个AR的图片（此处使用一个简单的红色方块作为示例）
-          const imgOverlay = new ImageOverlay({ canvas: arCanvas });
-          imgOverlay.drawImage('https://via.placeholder.com/200x200', { width: 0.2, height: 0.2 });
-  
-        } catch (error) {
-          console.error('打开摄像头失败：', error);
-        }
-      });
-  
-      function createWebGLContext() {
-        const canvas = document.createElement('canvas');
-        const gl = canvas.getContext('webgl', { xrCompatible: true });
-        return gl;
-      }
-  
-      class ImageOverlay {
-        constructor({ canvas }) {
-          this.canvas = canvas;
-          this.context = canvas.getContext('2d');
-          this.image = new Image();
-        }
-  
-        drawImage(url, { width, height }) {
-          this.image.onload = () => {
-            this.context.drawImage(this.image, 0, 0, width * this.canvas.width, height * this.canvas.height);
-          };
-          this.image.src = url;
-        }
-      }
-  
-    </script>
 </body>
 
 </html>
