@@ -141,6 +141,7 @@ body {
   display: none;
   /* 初始状态为隐藏 */
   transition: transform 0.5s ease-in-out;
+  transform: translateY(100%);
   /* 初始位置在下方 */
 }
 #chat_emoji_list .row {
@@ -151,6 +152,11 @@ body {
 }
 #chat_emoji_list .row .col .chat_emoji_icon {
   width: 95%;
+}
+@media screen and (min-width: 1000px) {
+  #chat_emoji_list .row .col .chat_emoji_icon {
+    width: 50%;
+  }
 }
 
 #chat_emoji_list.show {
