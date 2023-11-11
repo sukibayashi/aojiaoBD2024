@@ -40,6 +40,7 @@ body {
 .avatar {
   width: 60px;
   margin-right: 10px;
+  border-radius: 50%;
 }
 
 
@@ -62,7 +63,8 @@ body {
 
 // chat_container
 #chat-container {
-  width: 100vw;
+  // width: 100vw;
+  width: 100%;
   height: 100vh;
   // margin-bottom: 60px;
 }
@@ -84,6 +86,14 @@ body {
     display: flex;
     align-items: end;
 
+    .message_emoji {
+      margin-right: 10px;
+
+      .emoji {
+        width: 110px;
+      }
+    }
+
     // 訊息主體
     .message-body {
       width: 55%;
@@ -94,17 +104,17 @@ body {
       margin-right: 10px;
     }
 
-    .message_yamada{
+    .message_yamada {
       width: 78px;
       color: gray;
-      font-size: 4px;
+      font-size: .7em;
     }
 
     // 時間以及已讀
     .message_right {
       width: 78px;
       color: gray;
-      font-size: 4px;
+      font-size: .7em;
       margin-right: 10px;
 
       display: flex;
@@ -119,23 +129,58 @@ body {
   justify-content: end;
 }
 
-.chat-input{
+.chat-input {
   width: 100%;
   display: flex;
   align-items: center;
 }
 
 // 底部發送
-#message-input{
+#message-input {
   background-color: rgb(245, 245, 245);
   border: 5px solid rgb(242, 242, 242);
   padding-left: 5px;
   padding-right: 5px;
-  border-radius: 1rem;;
+  border-radius: 1rem;
+  ;
   margin-right: 12px;
+  margin-left: 20px;
 }
 
-.papper_plane{
+.papper_plane {
   width: 25px;
   height: 25px;
+}
+
+#chat_emoji_list {
+  width: 100%;
+  height: 25%;
+  background-color: #ededed;
+
+  display: none;
+  // display: block;
+
+  /* 初始状态为隐藏 */
+  transition: transform 0.5s ease-in-out;
+  // transform: translateY(100%);
+  /* 初始位置在下方 */
+
+  .row {
+    padding: 10px 10px 10px 10px;
+
+
+    .col {
+      margin: 0px 0px 5px 5px;
+
+
+      .chat_emoji_icon {
+        width: 95%;
+      }
+    }
+  }
+}
+
+#chat_emoji_list.show {
+  display: block;
+  transform: translateY(0);
 }

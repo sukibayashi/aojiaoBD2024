@@ -10,18 +10,21 @@
   <link rel="icon" type="image/png" href="./src/lime.png">
   <link rel="stylesheet" href="./css/lime.css">
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/bootstrap.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- Boostrap -->
-  <!-- https://getbootstrap.com/docs/5.3/getting-started/introduction/ -->
+    <!-- Boostrap -->
+    <!-- https://getbootstrap.com/docs/5.3/getting-started/introduction/ -->
 
-  <!-- 復習用 ↓ -->
-  <!-- https://github.com/sukibayashi/onlinecasinowalkerrankingpage/blob/master/index.html -->
+    <!-- 復習用 ↓ -->
+    <!-- https://github.com/sukibayashi/onlinecasinowalkerrankingpage/blob/master/index.html -->
 
-  <!-- code -->
-  <!-- https://fontawesome.com/search -->
+    <!-- icon -->
+    <!-- https://fontawesome.com/search -->
+
+    <!-- yamada -->
+    <!-- https://yamadalv999.net/ -->
+    <!-- https://www.dociy.net/comic/chapter/heshantianjinxinglv999delianai-masiro/0_41.html -->
 </head>
 
 <body>
@@ -73,7 +76,7 @@
       <ul class="list-group">
         <li id="toggleButton" class="list-group-item d-flex justify-content-between align-items-center">
           <div class="d-flex align-items-center">
-            <img src="./src/yamada.png" class="avatar" alt="Avatar">
+            <img src="./src/yamada1.png" class="avatar" alt="Avatar">
             <div class="avatar_content">
               <div class="avatar_name fw-bold">山田くん(9/21)</div>
               <div class="avatar_name"><small>山田くんが写真を送信しました</small></div>
@@ -100,7 +103,7 @@
         <li>
           <a href="./chat.html" class="list-group-item d-flex justify-content-between align-items-center">
             <div class="d-flex align-items-center">
-              <img src="./src/yamada.png" class="avatar" alt="Avatar">
+              <img src="./src/yamada1.png" class="avatar" alt="Avatar">
               <div class="avatar_content">
                 <div class="avatar_name fw-bold">山田くん(9/21)</div>
                 <div class="avatar_name"><small>山田くんが写真を送信しました</small></div>
@@ -162,76 +165,9 @@
   <!-- 底部 -->
 
 
+  <script src="./js/bootstrap.js"></script>
+  <script src="./js/aojiaoanmation.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-    crossorigin="anonymous"></script>
-
-  <!-- 刪除主頁面 -->
-  <script>
-    document.getElementById("toggleButton").addEventListener("click", function () {
-      // 获取所有具有指定class的元素
-      var elements = document.querySelectorAll(".content_toppage");
-
-      // 遍历并删除每个元素
-      elements.forEach(function (element) {
-        element.remove();
-      });
-
-      // 使用 AJAX 加载新的 HTML 文件内容
-      var xhr = new XMLHttpRequest();
-      xhr.open("GET", "chat.html", true);
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-          // 插入新内容
-          var newContent = xhr.responseText;
-          document.body.insertAdjacentHTML("beforeend", newContent);
-        }
-      };
-      xhr.send();
-    });
-
-  </script>
-
-  <!-- 發送JS -->
-  <script>
-    function sendMessage() {
-      var messageInput = document.getElementById("message-input");
-      var messageText = messageInput.value.trim();
-
-      if (messageText !== "") {
-          var chatBody = document.getElementById("chat-body");
-          var messageContainer = document.createElement("div");
-          messageContainer.className = "message own-message";
-          messageContainer.innerHTML = `
-      <div class="chat_box">
-          <div class="message_right">
-                  <div class="kidoku">既読</div>
-                  <div class="timestamp">${getTime()}</div>
-              </div>
-          <div class="message-body">${messageText}</div>
-      </div>
-      `;
-
-
-          chatBody.appendChild(messageContainer);
-
-          messageInput.value = "";
-          messageInput.focus();
-
-          // Scroll to the bottom of the chat
-          chatBody.scrollTop = chatBody.scrollHeight;
-      }
-      window.scrollTo(0, document.body.scrollHeight);
-  }
-
-  function getTime() {
-      var now = new Date();
-      var hours = now.getHours().toString().padStart(2, "0");
-      var minutes = now.getMinutes().toString().padStart(2, "0");
-      return hours + ":" + minutes;
-  }
-  </script>
 </body>
 
 </html>

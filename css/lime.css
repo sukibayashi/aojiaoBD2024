@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   background-image: url("/src/line_bg.jpg");
   background-size: 100%;
@@ -39,6 +40,7 @@ body {
 .avatar {
   width: 60px;
   margin-right: 10px;
+  border-radius: 50%;
 }
 
 #arCanvas {
@@ -58,7 +60,7 @@ body {
 }
 
 #chat-container {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
 }
 
@@ -78,6 +80,12 @@ body {
   display: flex;
   align-items: end;
 }
+.message .chat_box .message_emoji {
+  margin-right: 10px;
+}
+.message .chat_box .message_emoji .emoji {
+  width: 110px;
+}
 .message .chat_box .message-body {
   width: 55%;
   padding: 0.5rem;
@@ -89,12 +97,12 @@ body {
 .message .chat_box .message_yamada {
   width: 78px;
   color: gray;
-  font-size: 4px;
+  font-size: 0.7em;
 }
 .message .chat_box .message_right {
   width: 78px;
   color: gray;
-  font-size: 4px;
+  font-size: 0.7em;
   margin-right: 10px;
   display: flex;
   flex-direction: column;
@@ -118,9 +126,34 @@ body {
   padding-right: 5px;
   border-radius: 1rem;
   margin-right: 12px;
+  margin-left: 20px;
 }
 
 .papper_plane {
   width: 25px;
   height: 25px;
+}
+
+#chat_emoji_list {
+  width: 100%;
+  height: 25%;
+  background-color: #ededed;
+  display: none;
+  /* 初始状态为隐藏 */
+  transition: transform 0.5s ease-in-out;
+  /* 初始位置在下方 */
+}
+#chat_emoji_list .row {
+  padding: 10px 10px 10px 10px;
+}
+#chat_emoji_list .row .col {
+  margin: 0px 0px 5px 5px;
+}
+#chat_emoji_list .row .col .chat_emoji_icon {
+  width: 95%;
+}
+
+#chat_emoji_list.show {
+  display: block;
+  transform: translateY(0);
 }/*# sourceMappingURL=lime.css.map */
