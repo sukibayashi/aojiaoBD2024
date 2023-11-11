@@ -98,7 +98,7 @@ function sendEmoji_1() {
             <div class="kidoku">既読</div>
             <div class="timestamp">${getTime()}</div>
         </div>
-        <div class="message_emoji"><img src="./src/emoji/sticker3.GIF" class="emoji" alt="emoji"></div>
+        <div class="message_emoji"><img src="./src/emoji/IMG_6369.GIF" class="emoji" alt="emoji"></div>
     </div>
     `;
 
@@ -142,7 +142,7 @@ function sendEmoji_3() {
             <div class="kidoku">既読</div>
             <div class="timestamp">${getTime()}</div>
         </div>
-        <div class="message_emoji"><img src="./src/emoji/sticker5.GIF" class="emoji" alt="emoji"></div>
+        <div class="message_emoji"><img src="./src/emoji/sticker4.GIF" class="emoji" alt="emoji"></div>
     </div>
     `;
 
@@ -164,7 +164,7 @@ function sendEmoji_4() {
             <div class="kidoku">既読</div>
             <div class="timestamp">${getTime()}</div>
         </div>
-        <div class="message_emoji"><img src="./src/emoji/sticker6.GIF" class="emoji" alt="emoji"></div>
+        <div class="message_emoji"><img src="./src/emoji/sticker5.GIF" class="emoji" alt="emoji"></div>
     </div>
     `;
 
@@ -186,7 +186,7 @@ function sendEmoji_5() {
             <div class="kidoku">既読</div>
             <div class="timestamp">${getTime()}</div>
         </div>
-        <div class="message_emoji"><img src="./src/emoji/sticker7.GIF" class="emoji" alt="emoji"></div>
+        <div class="message_emoji"><img src="./src/emoji/sticker6.GIF" class="emoji" alt="emoji"></div>
     </div>
     `;
 
@@ -208,7 +208,7 @@ function sendEmoji_6() {
             <div class="kidoku">既読</div>
             <div class="timestamp">${getTime()}</div>
         </div>
-        <div class="message_emoji"><img src="./src/emoji/sticker8.GIF" class="emoji" alt="emoji"></div>
+        <div class="message_emoji"><img src="./src/emoji/sticker7.GIF" class="emoji" alt="emoji"></div>
     </div>
     `;
 
@@ -230,7 +230,7 @@ function sendEmoji_7() {
             <div class="kidoku">既読</div>
             <div class="timestamp">${getTime()}</div>
         </div>
-        <div class="message_emoji"><img src="./src/emoji/sticker9.GIF" class="emoji" alt="emoji"></div>
+        <div class="message_emoji"><img src="./src/emoji/sticker8.GIF" class="emoji" alt="emoji"></div>
     </div>
     `;
 
@@ -252,7 +252,7 @@ function sendEmoji_8() {
             <div class="kidoku">既読</div>
             <div class="timestamp">${getTime()}</div>
         </div>
-        <div class="message_emoji"><img src="./src/emoji/sticker10.GIF" class="emoji" alt="emoji"></div>
+        <div class="message_emoji"><img src="./src/emoji/sticker9.GIF" class="emoji" alt="emoji"></div>
     </div>
     `;
 
