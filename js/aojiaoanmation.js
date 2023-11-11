@@ -21,6 +21,17 @@ document.getElementById("toggleButton").addEventListener("click", function () {
     xhr.send();
 });
 
+// 主頁關閉表情包列表
+function close_emojiList() {
+    // 获取 chatEmojiList 元素
+    var chatEmojiList = document.getElementById("chat_emoji_list");
+
+    // 移除 .show 类
+    if (chatEmojiList.style.display === "block" || chatEmojiList.style.display === "") {
+        chatEmojiList.classList.remove("show");
+    }
+}
+
 // 打開表情包列表===================================================
 document.addEventListener("click", function (event) {
     var sendEmojiButton = document.getElementById("send_emoji");
@@ -55,6 +66,12 @@ function sendMessage() {
 
         messageInput.value = "";
         messageInput.focus();
+
+        var chatEmojiList = document.getElementById("chat_emoji_list");
+
+        if (chatEmojiList.style.display === "block" || chatEmojiList.style.display === "") {
+            chatEmojiList.classList.remove("show");
+        }
 
         // Scroll to the bottom of the chat
         chatBody.scrollTop = chatBody.scrollHeight;
@@ -147,7 +164,7 @@ function sendEmoji_4() {
             <div class="kidoku">既読</div>
             <div class="timestamp">${getTime()}</div>
         </div>
-        <div class="message_emoji"><img src="./src/emoji/sticker6.jpg" class="emoji" alt="emoji"></div>
+        <div class="message_emoji"><img src="./src/emoji/sticker6.GIF" class="emoji" alt="emoji"></div>
     </div>
     `;
 
@@ -169,7 +186,7 @@ function sendEmoji_5() {
             <div class="kidoku">既読</div>
             <div class="timestamp">${getTime()}</div>
         </div>
-        <div class="message_emoji"><img src="./src/emoji/sticker7.jpg" class="emoji" alt="emoji"></div>
+        <div class="message_emoji"><img src="./src/emoji/sticker7.GIF" class="emoji" alt="emoji"></div>
     </div>
     `;
 
@@ -191,7 +208,7 @@ function sendEmoji_6() {
             <div class="kidoku">既読</div>
             <div class="timestamp">${getTime()}</div>
         </div>
-        <div class="message_emoji"><img src="./src/emoji/sticker8.PNG" class="emoji" alt="emoji"></div>
+        <div class="message_emoji"><img src="./src/emoji/sticker8.GIF" class="emoji" alt="emoji"></div>
     </div>
     `;
 
@@ -213,7 +230,7 @@ function sendEmoji_7() {
             <div class="kidoku">既読</div>
             <div class="timestamp">${getTime()}</div>
         </div>
-        <div class="message_emoji"><img src="./src/emoji/sticker9.PNG" class="emoji" alt="emoji"></div>
+        <div class="message_emoji"><img src="./src/emoji/sticker9.GIF" class="emoji" alt="emoji"></div>
     </div>
     `;
 
@@ -235,7 +252,7 @@ function sendEmoji_8() {
             <div class="kidoku">既読</div>
             <div class="timestamp">${getTime()}</div>
         </div>
-        <div class="message_emoji"><img src="./src/emoji/sticker10.PNG" class="emoji" alt="emoji"></div>
+        <div class="message_emoji"><img src="./src/emoji/sticker10.GIF" class="emoji" alt="emoji"></div>
     </div>
     `;
 
