@@ -163,3 +163,9 @@ body {
   display: block;
   transform: translateY(0);
 }/*# sourceMappingURL=lime.css.map */
+
+.animated-element {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  /* 添加渐显过渡效果 */
+}

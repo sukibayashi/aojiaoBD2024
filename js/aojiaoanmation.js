@@ -1,4 +1,4 @@
-// 刪除主頁面========================================================
+// 刪除主頁面 =========================================================
 document.getElementById("toggleButton").addEventListener("click", function () {
     // 获取所有具有指定class的元素
     var elements = document.querySelectorAll(".content_toppage");
@@ -16,12 +16,15 @@ document.getElementById("toggleButton").addEventListener("click", function () {
             // 插入新内容
             var newContent = xhr.responseText;
             document.body.insertAdjacentHTML("beforeend", newContent);
+
+            // 在新内容中执行动画脚本
+            runAnimation();
         }
     };
     xhr.send();
 });
 
-// 主頁關閉表情包列表
+// 主頁關閉表情包列表 ================================================
 function close_emojiList() {
     // 获取 chatEmojiList 元素
     var chatEmojiList = document.getElementById("chat_emoji_list");
@@ -37,13 +40,34 @@ document.addEventListener("click", function (event) {
     var sendEmojiButton = document.getElementById("send_emoji");
     var chatEmojiList = document.getElementById("chat_emoji_list");
 
-    // 检查点击的元素是否是 send_emoji 或其内部的元素
-    if (event.target === sendEmojiButton || sendEmojiButton.contains(event.target)) {
-        chatEmojiList.classList.toggle("show");
+    // 检查是否成功获取到 sendEmojiButton 和 chatEmojiList
+    if (sendEmojiButton && chatEmojiList) {
+        // 检查点击的元素是否是 sendEmojiButton 或其内部的元素
+        if (event.target === sendEmojiButton || sendEmojiButton.contains(event.target)) {
+            chatEmojiList.classList.toggle("show");
+        }
     }
 });
 
-// 發送JS=========================================================
+// 【對話動畫】====================================================
+function runAnimation() {
+    const elements = document.querySelectorAll('.animated-element');
+
+    function animateElements() {
+        elements.forEach((element, index) => {
+            setTimeout(() => {
+                element.style.opacity = '1';
+                element.classList.add('animate__animated', 'animate__fadeInUp');
+            }, index * 1500);
+        });
+    }
+
+    animateElements();
+}
+
+
+
+// 發送JS ========================================================
 function sendMessage() {
     var messageInput = document.getElementById("message-input");
     var messageText = messageInput.value.trim();
@@ -86,7 +110,7 @@ function getTime() {
     return hours + ":" + minutes;
 }
 
-// 發送表情=======================================================
+// 發送表情 ======================================================
 // 【表情1】~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function sendEmoji_1() {
     var chatBody = document.getElementById("chat-body");
