@@ -169,3 +169,7 @@ body {
   transition: opacity 1s ease-in-out;
   /* 添加渐显过渡效果 */
 }
+
+#aojiao_bd{
+  max-width: 210px;
+}
