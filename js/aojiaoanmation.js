@@ -65,6 +65,20 @@ function runAnimation() {
     animateElements();
 }
 
+// 【語音轉文字】==================================================
+function toggleContent() {
+    var bdContent = document.getElementById("bd_content");
+
+    // 获取实际应用在元素上的样式
+    var computedStyle = window.getComputedStyle(bdContent);
+
+    // 切换显示和隐藏状态
+    if (computedStyle.display === "none") {
+        bdContent.style.display = "block";
+    } else {
+        bdContent.style.display = "none";
+    }
+}
 
 
 // 發送JS ========================================================
