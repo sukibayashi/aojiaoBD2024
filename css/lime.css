@@ -44,6 +44,10 @@ body {
   border-radius: 50%;
 }
 
+.chat_content_msg{
+  font-size: 0.8rem;
+}
+
 #arCanvas {
   position: absolute;
   top: 0;
