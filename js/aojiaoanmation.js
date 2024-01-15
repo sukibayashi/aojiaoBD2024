@@ -24,6 +24,32 @@ document.getElementById("toggleButton").addEventListener("click", function () {
     xhr.send();
 });
 
+// 刪除主頁面2 =========================================================
+document.getElementById("toggleButton2").addEventListener("click", function () {
+    // 获取所有具有指定class的元素
+    var elements = document.querySelectorAll(".content_toppage");
+
+    // 遍历并删除每个元素
+    elements.forEach(function (element) {
+        element.remove();
+    });
+
+    // 使用 AJAX 加载新的 HTML 文件内容
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "chat2.html", true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            // 插入新内容
+            var newContent = xhr.responseText;
+            document.body.insertAdjacentHTML("beforeend", newContent);
+
+            // 在新内容中执行动画脚本
+            runAnimation();
+        }
+    };
+    xhr.send();
+});
+
 // 主頁關閉表情包列表 ================================================
 function close_emojiList() {
     // 获取 chatEmojiList 元素
